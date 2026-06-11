@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter</title>
+</head>
+<body style="font-family:Arial;padding:30px">
+
+<h1>📝 Word Counter</h1>
+
+<textarea
+id="text"
+rows="10"
+cols="60"
+oninput="countWords()">
+</textarea>
+
+<p id="result">
+Words: 0 | Characters: 0
+</p>
+
+<script>
+function countWords(){
+
+    let text =
+    document.getElementById("text").value;
+
+    let words =
+    text.trim().split(/\s+/).filter(Boolean).length;
+
+    document.getElementById("result").innerHTML =
+    `Words: ${words} | Characters: ${text.length}`;
+}
+</script>
+
+</body>
+</html>
